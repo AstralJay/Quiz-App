@@ -1,42 +1,53 @@
-🧠 Simple Quiz App
-An interactive, animated quiz application built with HTML, CSS, and JavaScript. Designed for learning and fun, it features a sleek interface, countdown timers, dark/light theme toggle, and detailed answer reviews — all in one responsive experience.
+# 🧠 Simple Quiz App
 
-✨ Features
-🏁 Welcome screen with countdown before quiz begins
+An interactive, animated quiz application built using **HTML, CSS, and JavaScript**. Designed to test your knowledge in a fun and clean interface, this quiz app includes timed questions, animated transitions, a score summary modal, and answer review functionality.
 
-🎨 Dark / Light theme toggle
+---
 
-⏱️ 5-second countdown per question with automatic lock
+## ✨ Features
 
-📊 Animated question transitions
+- 🏁 **Welcome Screen** – with a 3-second countdown to build anticipation  
+- ⏱️ **Per-Question Timer** – each question is timed (5 seconds), encouraging quick thinking  
+- 🎨 **Light/Dark Mode Toggle** – switch themes on the fly  
+- 🎬 **Animated Answer Buttons** – slide-in effects for smooth interaction  
+- ✅ **Instant Feedback** – see if your answer is right or wrong immediately  
+- 📊 **Score Summary Modal** – a popup shows your total score after the quiz  
+- 📋 **Review of Incorrect Answers** – helpful recap at the end with the correct answers  
+- 🔁 **Play Again Option** – reset and try the quiz again instantly  
 
-✅ Instant answer feedback with score tracking
+---
 
-📋 Popup-style score modal on completion
+## 🧪 Technologies Used
 
-🔍 Review of incorrect answers with correct solutions
+- **HTML5** – structure  
+- **CSS3** – responsive styling and animations  
+- **JavaScript (Vanilla)** – quiz logic, countdown timer, interactivity  
 
-🔁 "Play Again" option for continuous practice
+---
 
-📁 Technologies Used
-HTML5 – Structure
+## 📸 Preview
 
-CSS3 – Styling + Animations
+> ![image](https://github.com/user-attachments/assets/564337ce-7442-4b48-a2ac-1d08cfeb41d3)
 
-Vanilla JavaScript – Logic and Interactivity
+> Example:  
+> ![Quiz App Demo](preview.gif)
 
-🚀 Getting Started
-Clone the repo:
+---
 
-bash
+## 🚀 Getting Started
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/quiz-app.git
+📂 Project Structure
+plaintext
 Copy
 Edit
-git clone https://github.com/yourusername/quiz-app.git
-Open index.html in your browser.
-No dependencies needed — it’s all in pure HTML, CSS, and JS!
-
-📸 Preview
-
-
-📄 License
-This project is open source under the MIT License.
+quiz-app/
+├── index.html
+├── style.css
+├── index.js
+└── README.md
+📝 License
+This project is licensed under the MIT License.
+Feel free to use, modify, and share!
