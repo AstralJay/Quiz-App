@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif, Arial;
+    box-sizing: border-box;
+}
+
+body{
+    background:#022954 ;
+}
+
+.app{
+    background: #ced4e3;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 30px;
+    padding:30px;
+}
+
+.app h1{
+    text-align: center;
+    font-size: 25px;
+    color: #354c7c;
+    font-weight: bold;
+    border-bottom: 2px solid #354c7c;
+    padding-bottom: 30px;
+    padding-bottom: 25px;
+}
+
+.quiz{
+    padding: 20px 0;
+}
+
+.quiz h2{
+    font-size: 20px;
+    color: #022954;
+    font-weight: 600;
+}
+
+.btn{
+    background-color: #eaebfe;
+    color: #022954;
+    font-weight: 600;
+    width: 100%;
+    border: 1px solid #232d4b;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+    background-color: #232d4b;
+    color: #eaebfe;
+}
+
+#next-btn{
+    background-color: #022954;
+    color: #eaebfe;
+    font-weight: 600;
+    width: 150px;
+    border: 1px solid #232d4b;
+    padding: 10px;
+    margin: 10px auto 0;
+    text-align: center;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+    display: none;
+
+}
+
+#next-btn:hover{
+    transform: scale(1.15);
+    background-color: #eaebfe;
+    color: #232d4b;
+}
+
+#next-btn:active{
+    transform: scale(0.5);
+    background-color: #232d4b;
+    color: #eaebfe;
+}
+
+#welcome-screen {
+    text-align: center;
+}
+
+#welcome-screen h1 {
+    color: #022954;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+#welcome-screen p {
+    margin-bottom: 20px;
+    color: #354c7c;
+    font-size: 18px;
+}
+
+#start-btn {
+    background-color: #022954;
+    color: #eaebfe;
+    font-weight: 600;
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#start-btn:hover {
+    transform: scale(1.1);
+    background-color: #354c7c;
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.btn.slide-in {
+    animation: slideIn 0.4s ease-out forwards;
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.btn.slide-in {
+    animation: slideIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.quiz.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.countdown {
+    font-size: 48px;
+    color: #022954;
+    font-weight: bold;
+    margin-top: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.timer {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6); 
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    color: #022954;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 80%;
+    animation: popup 0.4s ease;
+  }
+  
+  .modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .modal-content button {
+    background-color: #022954;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .modal-content button:hover {
+    background-color: #354c7c;
+  }
+  
+  @keyframes popup {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+h4{
+    color: white;
+    text-align: right;
+    padding-top: 10px;
+    font-weight: normal;
+    margin-right: 475px;
+}
+#review-container {
+    margin-top: 20px;
+    text-align: left;
+    max-height: 300px;
+    overflow-y: auto;
+    font-size: 14px;
+  }
+  
+  .review-item {
+    margin-bottom: 10px;
+  }
+  
+  .review-item strong {
+    color: #dc3545;
+  }
+  
+  .review-item .correct {
+    color: #28a745;
+  }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="score-modal" class="modal">
+        <div class="modal-content">
+          <h2 id="score-message">Your Score</h2>
+          <div id="review-container"></div>
+          <button id="play-again">Play Again</button>
+        </div>
+      </div>
+      
+    <div class="app">
+        <div id="welcome-screen">
+            <h1>Welcome to the Quiz!</h1>
+            <p>Test your knowledge with 5 fun questions. Are you ready?</p>
+            <button id="start-btn">Start Quiz</button>
+        </div>
+        <div class="quiz" id="quiz-screen" style="display: none;">
+            <h2 id="question">Question</h2>
+            <div id="answer-btns"></div>
+            <button id="next-btn">Next</button>
+        </div>
+    </div>
+    <h4>By Akshaj Deepak</h4>
+
+    <script src="index.js"></script>
+</body>
+</html>
