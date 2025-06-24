@@ -1,13 +1,13 @@
 // Comments by Akshaj to help decipher code
 
-// Adding the questions and answers using a nested structure
-
+// handles score popup and stores incorrect answers
 const modal = document.getElementById("score-modal");
 const scoreMessage = document.getElementById("score-message");
 const playAgainButton = document.getElementById("play-again");
 const reviewContainer = document.getElementById("review-container");
 let incorrectAnswers = [];
 
+// list of quiz questions and answer options
 const questions = [
     {
         question: "How many time zones are there in Russia?",
@@ -56,7 +56,7 @@ const questions = [
     }
 ];
 
-// Initialising elements from the HTML file
+// get important parts of the HTML page
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-btns");
 const nextButton = document.getElementById("next-btn");
@@ -65,17 +65,18 @@ const welcomeScreen = document.getElementById("welcome-screen");
 const quizScreen = document.getElementById("quiz-screen");
 const countdownElement = document.createElement("div");
 
-// Timer variables
+// timer setup
 const timerElement = document.createElement("div");
 timerElement.className = "timer";
 quizScreen.insertBefore(timerElement, questionElement);
 let timer;
 let timeLeft = 5;
 
-let index = 0; // Setting question index and score to zero before quiz starts
+// start with first question and score as 0
+let index = 0;
 let score = 0;
 
-// Start button event listener – hides welcome screen, shows countdown, then quiz
+// when start is clicked, show countdown then quiz
 startButton.addEventListener("click", () => {
     startButton.disabled = true;
     countdownElement.className = "countdown";
@@ -98,6 +99,7 @@ startButton.addEventListener("click", () => {
     }, 1000);
 });
 
+// starts the quiz from the first question
 const startQuiz = () => {
     index = 0;
     score = 0;
@@ -107,7 +109,7 @@ const startQuiz = () => {
     showQuestion();
 };
 
-// Displays the current question and starts the timer
+// shows the current question and starts countdown timer
 const showQuestion = () => {
     resetState();
     clearInterval(timer); 
@@ -120,7 +122,7 @@ const showQuestion = () => {
         if (timeLeft <= 0) {
             clearInterval(timer);
             timerElement.textContent = "⏰ Time's up!";
-            disableAnswers(); // lock options and reveal correct one
+            disableAnswers(); // stop answering and show correct answer
         }
     }, 1000);
 
@@ -146,7 +148,7 @@ const showQuestion = () => {
     }
 };
 
-// Reset UI state for next question
+// clears old buttons before next question
 const resetState = () => {
     nextButton.style.display = "none";
     while (answerButtons.firstChild) {
@@ -154,7 +156,7 @@ const resetState = () => {
     }
 };
 
-// Disables all options and shows the correct one (for timeouts)
+// disables all answer buttons and shows the correct one (used when time is up)
 const disableAnswers = () => {
     Array.from(answerButtons.children).forEach(button => {
         if (button.dataset.correct === "true") {
@@ -165,15 +167,15 @@ const disableAnswers = () => {
     nextButton.style.display = "block";
 };
 
-// Handles user selecting an answer
+// checks if answer is right or wrong and highlights it
 const selectAnswer = (e) => {
-    clearInterval(timer); // stop timer on answer
+    clearInterval(timer); // stop countdown when answer is clicked
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
     const currentQuestion = questions[index];
 
     if (!isCorrect) {
-        // Save review entry
+        // save for review later
         const correctAnswer = currentQuestion.answers.find(ans => ans.correct).text;
         incorrectAnswers.push({
             question: currentQuestion.question,
@@ -198,7 +200,7 @@ const selectAnswer = (e) => {
     nextButton.style.display = "block";
 };
 
-// Score logic and replay
+// goes to next question or ends quiz
 nextButton.addEventListener("click", () => {
     index++;
     if (index < questions.length) {
@@ -208,13 +210,12 @@ nextButton.addEventListener("click", () => {
     }
 });
 
-// Show final score and Play Again logic
+// shows final score and review of incorrect answers
 const showScore = () => {
     clearInterval(timer);
     resetState();
     timerElement.textContent = "";
 
-    // Show modal
     modal.style.display = "flex";
     scoreMessage.textContent = `🎉 You scored ${score} out of ${questions.length}!`;
     if (incorrectAnswers.length > 0) {
@@ -232,6 +233,8 @@ const showScore = () => {
         reviewContainer.innerHTML = `<p>✅ Perfect score! No wrong answers.</p>`;
     }
 };
+
+// restart the quiz when play again is clicked
 playAgainButton.addEventListener("click", () => {
     modal.style.display = "none";
     index = 0;
