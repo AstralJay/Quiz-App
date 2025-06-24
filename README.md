@@ -34,15 +34,6 @@ An interactive, animated quiz application built using **HTML, CSS, and JavaScrip
 
 ---
 
-## 🚀 Getting Started
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/quiz-app.git
-📂 Project Structure
-plaintext
-Copy
-Edit
 quiz-app/
 ├── index.html
 ├── style.css
